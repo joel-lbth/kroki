@@ -106,7 +106,7 @@ def diagram_image_bytes(
         output_format=output_format,
         diagram_source=encode_src(diagram_source),
     )
-    r = requests.get(url)
+    r = requests.get(url, verify=False)
     if r.status_code == 200:
         return r.content
     else:
